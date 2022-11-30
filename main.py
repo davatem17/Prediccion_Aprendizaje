@@ -1,20 +1,10 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn import metrics
-from sklearn import linear_model
+import joblib as jb
 
-#leemos el csv
-datos = pd.read_csv("DataParticipantesCharla.csv")
-dataframe = pd.DataFrame(datos)
-print(datos)
-X=(dataframe[["intervalo1","intervalo2","intervalo3","intervalo4","intervalo5","intervalo6"]])
-y=(dataframe["Resultados"])
+#Cargar el Modelo
+model = jb.load('modelo_entrenado.pkl')
 
-#Entrenamiento
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=0)
-model = LogisticRegression()
-model.fit(X_train,y_train)
+#Probar el Modelo
 dataNew = {'intervalo1': [1,1,0],
             'intervalo2': [0,0,1],
             'intervalo3': [0,1,1],
