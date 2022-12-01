@@ -6,10 +6,10 @@ import joblib as jb
 
 #Extraccion de Datos
 #leemos el cvs 
-datos = pd.read_csv("Hora.csv")
+datos = pd.read_csv("General.csv")
 dataframe = pd.DataFrame(datos)
 print(datos)
-X=(dataframe[["intervalo1","intervalo2","intervalo3","intervalo4","intervalo5","intervalo6"]])
+X=(dataframe[["intervalo1","intervalo2","intervalo3","intervalo4","intervalo5"]])
 y=(dataframe["Resultados"])
 
 #Entrenamiento
@@ -20,5 +20,5 @@ model.fit(X_train,y_train)
 #Ver q tambien aprendio el algoritmo
 print(model.score(X_test,y_test))
 #Guardar Modelo
-jb.dump(model,'modelo_hora.pkl')
+jb.dump(model,'modelo_General.pkl')
 
