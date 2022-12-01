@@ -6,7 +6,7 @@ import joblib as jb
 
 #Extraccion de Datos
 #leemos el cvs 
-datos = pd.read_csv("DataParticipantesCharla.csv")
+datos = pd.read_csv("Datos de Entrenamiento Encuestas 1 hora.csv")
 dataframe = pd.DataFrame(datos)
 print(datos)
 X=(dataframe[["intervalo1","intervalo2","intervalo3","intervalo4","intervalo5","intervalo6"]])
