@@ -19,6 +19,7 @@ model.fit(X_train,y_train)
 
 #Ver q tambien aprendio el algoritmo
 print(model.score(X_test,y_test))
+
 #Guardar Modelo
 jb.dump(model,'modelo_General.pkl')
 
