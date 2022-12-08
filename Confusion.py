@@ -4,6 +4,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 import numpy as np
 import joblib as jb
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #Extraccion de Datos
 #leemos el cvs 
@@ -56,5 +58,15 @@ jb.dump(model,'modelo_Hora.pkl')
 
 pred = model.predict(X_test)
 
-confusion_matrix(y_test, pred, labels = [1, 0])
-print(confusion_matrix(y_test, pred, labels = [1, 0]))
+#confusion_matrix(y_test, pred, labels = [1, 0])
+#print(confusion_matrix(y_test, pred, labels = [1, 0]))
+
+labels = [1, 0]
+c = confusion_matrix(y_test, pred, labels = labels)
+panda = pd.DataFrame(c, index = labels, columns = labels)
+
+print(pd.DataFrame(c, index = labels, columns = labels))
+
+grafica = sns.heatmap(panda, cmap = 'Pastel1', annot=True)
+grafica.set(xlabel = 'Verdaderos', ylabel = 'Predicción')
+plt.show()
