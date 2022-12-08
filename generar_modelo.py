@@ -13,12 +13,16 @@ X=(dataframe[["intervalo1","intervalo2","intervalo3","intervalo4","intervalo5","
 y=(dataframe["Resultados"])
 
 #Entrenamiento
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=0)
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.05,random_state=0)
 model = LogisticRegression()
 model.fit(X_train,y_train)
 
 #Ver q tambien aprendio el algoritmo
 print(model.score(X_test,y_test))
+print("\n")
+print(X_test)
+print("\n")
+print(y_test)
 #Guardar Modelo
 jb.dump(model,'modelo_Hora.pkl')
 

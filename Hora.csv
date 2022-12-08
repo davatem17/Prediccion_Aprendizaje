@@ -1,5 +1,5 @@
 intervalo1,intervalo2,intervalo3,intervalo4,intervalo5,intervalo6,Resultados
-1,0,1,0,0,1,1
+1,0,1,0,0,1,0
 1,0,1,0,0,0,0
 1,0,1,0,1,1,1
 1,1,1,1,1,1,1
@@ -11,7 +11,7 @@ intervalo1,intervalo2,intervalo3,intervalo4,intervalo5,intervalo6,Resultados
 1,1,1,1,1,1,1
 1,1,1,1,1,1,1
 1,1,1,1,1,1,1
-1,1,0,0,0,1,1
+1,1,0,0,0,1,0
 0,1,1,1,1,1,1
 1,1,1,1,1,1,1
 0,1,1,1,1,1,1
